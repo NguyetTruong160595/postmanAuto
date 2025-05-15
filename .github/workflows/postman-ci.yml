@@ -17,13 +17,16 @@ jobs:
       - name: 🧰 Install Newman & Reporter
         run: npm install -g newman newman-reporter-htmlextra
 
-      - name: 🧪 Run Postman Collection
+      - name: 🧪 Run all Postman Collections
         run: |
           mkdir -p newman-report
-          newman run postman/collection.json \
-            --environment postman/environment.json \
-            --reporters cli,htmlextra \
-            --reporter-htmlextra-export newman-report/report.html
+          for file in postman/*.json; do
+            name=$(basename "$file" .json)
+            echo "Running collection: $name"
+            newman run "$file" \
+              --reporters cli,htmlextra \
+              --reporter-htmlextra-export "newman-report/${name}-report.html"
+          done
 
       - name: 📤 Upload Newman HTML Report
         uses: actions/upload-artifact@v4
