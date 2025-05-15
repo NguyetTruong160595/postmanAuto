@@ -1,0 +1,1426 @@
+{
+	"info": {
+		"_postman_id": "3e1fd76d-4884-4469-8530-a664e2f79510",
+		"name": "users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18416975"
+	},
+	"item": [
+		{
+			"name": "adminLogin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mail\": \"nguyettruong@freec.asia\",\n  \"password\": \"abcd1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/adminLogin",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"adminLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchAuthUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{acccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n   \"user_id\" :\"123456\",\n   \"hash\" : \"fyguds3!fdsfsdfdfdsfdE#Vb3wedfs\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchAuthUser",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchAuthUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchNotViewedMatchedUsers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n   \"user_id\" :\"123456\",\n   \"hash\" : \"fyguds3!fdsfsdfdfdsfdE#Vb3wedfs\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchNotViewedMatchedUsers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchNotViewedMatchedUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "requestSmsVerificationCode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"tel\": \"0398025597\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/users/requestSmsVerificationCode",
+					"path": [
+						"users",
+						"requestSmsVerificationCode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"tel\": \"0398025597\",\n  \"code\": \"111111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/updateTel",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"updateTel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "requestMailVerificationCodeForUpdateMail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"new_mail\": \"taivo01@freec.asia\",\n  \"password\": \"free!123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/requestMailVerificationCodeForUpdateMail",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"requestMailVerificationCodeForUpdateMail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateMail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"new_mail\": \"taivo01@freec.asia\",\n  \"code\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/updateMail",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"updateMail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upsertUserId",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Beaer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id_code\": \"1232312\",\n  \"id_image_base64\": \"data:image/jpeg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIEdlbmVyYXRvcjogU1ZHIFJlcG8gTWl4ZXIgVG9vbHMgLS0+Cjxzdmcgd2lkdGg9IjgwMHB4IiBoZWlnaHQ9IjgwMHB4IiB2aWV3Qm94PSIwIC0xODMuNSA1MTIgNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1lZXQiPgoNPGcgZmlsbD0iIzgzQ0QyOSI+Cg08cGF0aCBkPSJNNDcxLjA1IDUxLjYxMWMtMS4yNDQgMC0yLjQ1NC4yNTctMy41MjUuODYzbC0zMy44ODggMTkuNTdjLTIuMTkzIDEuMjY0LTMuNTI2IDMuNjUtMy41MjYgNi4xODl2MzkuMDY5YzAgMi41MzcgMS4zMzMgNC45MiAzLjUyNiA2LjE4N2w4Ljg1IDUuMTA5YzQuMyAyLjExOSA1Ljg4NSAyLjA4NiA3Ljg0MiAyLjA4NiA2LjM2NiAwIDEwLjAwMS0zLjg2MyAxMC4wMDEtMTAuNTc2VjgxLjU0MmMwLS41NDUtLjQ3Mi0uOTM1LTEuMDA3LS45MzVoLTQuMjQ1Yy0uNTQ0IDAtMS4wMDcuMzktMS4wMDcuOTM1djM4LjU2NmMwIDIuOTc1LTMuMSA1Ljk2OC04LjEzIDMuNDUzbC05LjIxLTUuMzk2Yy0uMzI2LS4xNzctLjU3Ni0uNDktLjU3Ni0uODYzdi0zOS4wN2MwLS4zNy4yNDctLjc0Ny41NzYtLjkzNUw0NzAuNTQ3IDU3LjhhLjk5OC45OTggMCAwIDEgMS4wMDcgMGwzMy44MTcgMTkuNDk4Yy4zMjIuMTk0LjU3Ni41NTMuNTc2LjkzNnYzOS4wNjljMCAuMzczLS4xODguNzU1LS41MDQuOTM1bC0zMy44ODkgMTkuNDk4Yy0uMjkuMTczLS42OS4xNzMtMS4wMDcgMGwtOC43MDYtNS4xOGEuOTA1LjkwNSAwIDAgMC0uODYzIDBjLTIuNDAzIDEuMzYyLTIuODU1IDEuNTItNS4xMDkgMi4zMDItLjU1NS4xOTQtMS4zOTguNDk1LjI4OCAxLjQ0bDExLjM2OCA2LjY5YTYuOTk1IDYuOTk1IDAgMCAwIDMuNTI2LjkzNiA2Ljk0OSA2Ljk0OSAwIDAgMCAzLjUyNS0uOTM1bDMzLjg4OS0xOS40OTljMi4xOTMtMS4yNzUgMy41MjUtMy42NSAzLjUyNS02LjE4N3YtMzkuMDdjMC0yLjUzOC0xLjMzMi00LjkyLTMuNTI1LTYuMTg3bC0zMy44ODktMTkuNTdjLTEuMDYyLS42MDctMi4yOC0uODY0LTMuNTI1LS44NjR6Ii8+Cg08cGF0aCBkPSJNNDgwLjExNiA3OS41MjhjLTkuNjUgMC0xNS4zOTcgNC4xMDctMTUuMzk3IDEwLjkzNyAwIDcuNDA4IDUuNzA0IDkuNDQ0IDE0Ljk2NiAxMC4zNiAxMS4wOCAxLjA4NSAxMS45NDMgMi43MTIgMTEuOTQzIDQuODkzIDAgMy43ODMtMy4wMTYgNS4zOTYtMTAuMTQ0IDUuMzk2LTguOTU3IDAtMTAuOTI1LTIuMjM2LTExLjU4NC02LjY5MS0uMDc4LS40NzgtLjQ0Ny0uODY0LS45MzYtLjg2NGgtNC4zODljLS41NCAwLTEuMDA3LjQ2Ni0xLjAwNyAxLjAwOCAwIDUuNzAzIDMuMTAyIDEyLjQ0NyAxNy45MTYgMTIuNDQ3IDEwLjcyMyAwIDE2LjkwOC00LjIwOSAxNi45MDgtMTEuNTg0IDAtNy4zMS00Ljk5Ni05LjI3My0xNS4zOTgtMTAuNjQ4LTEwLjUxLTEuMzkxLTExLjUxMi0yLjA3Mi0xMS41MTItNC41MzMgMC0yLjAzMi44NS00Ljc1IDguNjM0LTQuNzUgNi45NTQgMCA5LjUyNCAxLjUgMTAuNTc3IDYuMTg5LjA5Mi40NC40OC43OTEuOTM1Ljc5MWg0LjM5Yy4yNyAwIC41MzItLjE2Ni43MTktLjM2LjE4NC0uMjA3LjMxNC0uNDQuMjg4LS43MTktLjY4LTguMDc0LTYuMDY0LTExLjg3Mi0xNi45MDktMTEuODcyeiIvPgoNPC9nPgoNPHBhdGggZD0iTTI3MS44MjEuMzgzYTIuMTgxIDIuMTgxIDAgMCAwLTEuMDguMjg3IDIuMTggMi4xOCAwIDAgMC0xLjA3OSAxLjg3MXY1NS4wNDJjMCAuNTQtLjI1MSAxLjAyNC0uNzE5IDEuMjk1YTEuNTAxIDEuNTAxIDAgMCAxLTEuNTExIDBsLTguOTk0LTUuMThhNC4zMSA0LjMxIDAgMCAwLTQuMzE3IDBsLTM1LjkwMyAyMC43MjFjLTEuMzQyLjc3NS0yLjE1OCAyLjI2NC0yLjE1OCAzLjgxNHY0MS40NDNjMCAxLjU0OC44MTcgMi45NjYgMi4xNTggMy43NDFsMzUuOTAzIDIwLjcyMmE0LjMgNC4zIDAgMCAwIDQuMzE3IDBsMzUuOTAzLTIwLjcyMmE0LjMwOCA0LjMwOCAwIDAgMCAyLjE1OS0zLjc0MVYxNi4zNTZhNC4zODYgNC4zODYgMCAwIDAtMi4yMy0zLjgxNEwyNzIuOS41OThjLS4zMzUtLjE4Ny0uNzA3LS4yMi0xLjA3OS0uMjE1ek00MC44NjEgNTIuMTE1Yy0uNjg0LjAyNy0xLjMyOC4xNDctMS45NDIuNTAzTDMuMDE1IDczLjM0YTQuMyA0LjMgMCAwIDAtMi4xNTggMy43NDFMLjkyOSAxMzIuN2MwIC43NzMuMzk5IDEuNDkyIDEuMDc5IDEuODdhMi4wOTYgMi4wOTYgMCAwIDAgMi4xNTkgMGwyMS4yOTctMTIuMjMxYzEuMzQ5LS44MDIgMi4yMy0yLjE5NiAyLjIzLTMuNzQyVjkyLjYyM2MwLTEuNTUuODE1LTIuOTcyIDIuMTU5LTMuNzQybDkuMDY1LTUuMjUyYTQuMjUxIDQuMjUxIDAgMCAxIDIuMTU5LS41NzZjLjc0IDAgMS41LjE4NSAyLjE1OC41NzZsOS4wNjYgNS4yNTJhNC4yOTYgNC4yOTYgMCAwIDEgMi4xNTkgMy43NDJ2MjUuOTczYzAgMS41NDYuODkgMi45NSAyLjIzIDMuNzQybDIxLjI5NyAxMi4yMzJhMi4wOTYgMi4wOTYgMCAwIDAgMi4xNTkgMCAyLjE2NCAyLjE2NCAwIDAgMCAxLjA4LTEuODcxbC4wNy01NS42MThhNC4yOCA0LjI4IDAgMCAwLTIuMTU4LTMuNzQxTDQzLjIzNSA1Mi42MThjLS42MDctLjM1Ni0xLjI1My0uNDc1LTEuOTQyLS41MDNoLS40MzJ6bTMyMi42MjQuNTAzYy0uNzUgMC0xLjQ4NS4xOS0yLjE1OC41NzZsLTM1LjkwMyAyMC43MjJhNC4zMDYgNC4zMDYgMCAwIDAtMi4xNTkgMy43NDFWMTE5LjFjMCAxLjU1OS44NzggMi45NzEgMi4yMyAzLjc0MmwzNS42MTYgMjAuMjljMS4zMTUuNzUgMi45MjEuODA3IDQuMjQ1LjA3bDIxLjU4NS0xMi4wMTVjLjY4NS0uMzggMS4xNDgtMS4wOSAxLjE1MS0xLjg3YTIuMTI2IDIuMTI2IDAgMCAwLTEuMDc5LTEuODcxbC0zNi4xMTktMjAuNzIyYy0uNjc2LS4zODYtMS4xNTEtMS4xNjctMS4xNTEtMS45NDN2LTEyLjk1YzAtLjc3NS40OC0xLjQ4NSAxLjE1MS0xLjg3MWwxMS4yMjQtNi40NzZhMi4xNTUgMi4xNTUgMCAwIDEgMi4xNTkgMEwzNzUuNSA4OS45NmEyLjE1MiAyLjE1MiAwIDAgMSAxLjA4IDEuODd2MTAuMjE3YTIuMTUgMi4xNSAwIDAgMCAxLjA3OSAxLjg3Yy42NzMuMzg5IDEuNDg3LjM5IDIuMTU4IDBMNDAxLjMzMSA5MS40YTQuMzI1IDQuMzI1IDAgMCAwIDIuMTU5LTMuNzQydi0xMGMwLTEuNTQ1LS44Mi0yLjk2Ni0yLjE1OS0zLjc0MmwtMzUuNjg3LTIwLjcyMmE0LjI3OSA0LjI3OSAwIDAgMC0yLjE1OS0uNTc1em0tMTA3LjM1IDMwLjkzOWMuMTg4IDAgLjQwOC4wNDYuNTc2LjE0M2wxMi4zMDQgNy4xMjNjLjMzNC4xOTMuNTc2LjU1LjU3Ni45MzV2MTQuMjQ2YzAgLjM4Ny0uMjQuNzQzLS41NzYuOTM2bC0xMi4zMDQgNy4xMjNhMS4wODggMS4wODggMCAwIDEtMS4wNzkgMGwtMTIuMzAzLTcuMTIzYy0uMzM1LS4xOTQtLjU3Ni0uNTQ5LS41NzYtLjkzNlY5MS43NThjMC0uMzg2LjI0Mi0uNzQuNTc2LS45MzVsMTIuMzAzLTcuMTIyYS45NDguOTQ4IDAgMCAxIC41MDQtLjE0M3YtLjAwMXoiIGZpbGw9IiM0MDQxMzciLz4KDTxwYXRoIGQ9Ik0xNDguNzE0IDUyLjQwMmMtLjc0OCAwLTEuNDg4LjE5LTIuMTU4LjU3NmwtMzUuOTAzIDIwLjY1Yy0xLjM0My43NzMtMi4xNTkgMi4yNjUtMi4xNTkgMy44MTN2NDEuNDQzYzAgMS41NS44MTcgMi45NjYgMi4xNTkgMy43NDJsMzUuOTAzIDIwLjcyMWE0LjI5NyA0LjI5NyAwIDAgMCA0LjMxNyAwbDM1LjkwMy0yMC43MjFhNC4zMDggNC4zMDggMCAwIDAgMi4xNTgtMy43NDJWNzcuNDQxYzAtMS41NS0uODE2LTMuMDQtMi4xNTgtMy44MTNsLTM1LjkwMy0yMC42NWE0LjI5NyA0LjI5NyAwIDAgMC0yLjE1OS0uNTc2ek0zNjMuNDEzIDg5LjM4NWMtLjE0MyAwLS4zMDIgMC0uNDMxLjA3MmwtNi45MDcgNC4wMjlhLjg0Ljg0IDAgMCAwLS40MzIuNzJ2Ny45MTRjMCAuMjk4LjE3Mi41NzEuNDMyLjcybDYuOTA3IDMuOTU3Yy4yNTkuMTUuNTM1LjE1Ljc5MSAwbDYuOTA3LTMuOTU4YS44NDYuODQ2IDAgMCAwIC40MzItLjcxOXYtNy45MTVhLjg0Ni44NDYgMCAwIDAtLjQzMi0uNzE5bC02LjkwNy00LjAzYy0uMTI4LS4wNzUtLjIxNi0uMDctLjM2LS4wN3oiIGZpbGw9IiM4M0NEMjkiLz4KDTwvc3ZnPg==\",\n  \"selfie_id_image_base64\": \"data:image/jpeg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIEdlbmVyYXRvcjogU1ZHIFJlcG8gTWl4ZXIgVG9vbHMgLS0+Cjxzdmcgd2lkdGg9IjgwMHB4IiBoZWlnaHQ9IjgwMHB4IiB2aWV3Qm94PSIwIC0xODMuNSA1MTIgNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1lZXQiPgoNPGcgZmlsbD0iIzgzQ0QyOSI+Cg08cGF0aCBkPSJNNDcxLjA1IDUxLjYxMWMtMS4yNDQgMC0yLjQ1NC4yNTctMy41MjUuODYzbC0zMy44ODggMTkuNTdjLTIuMTkzIDEuMjY0LTMuNTI2IDMuNjUtMy41MjYgNi4xODl2MzkuMDY5YzAgMi41MzcgMS4zMzMgNC45MiAzLjUyNiA2LjE4N2w4Ljg1IDUuMTA5YzQuMyAyLjExOSA1Ljg4NSAyLjA4NiA3Ljg0MiAyLjA4NiA2LjM2NiAwIDEwLjAwMS0zLjg2MyAxMC4wMDEtMTAuNTc2VjgxLjU0MmMwLS41NDUtLjQ3Mi0uOTM1LTEuMDA3LS45MzVoLTQuMjQ1Yy0uNTQ0IDAtMS4wMDcuMzktMS4wMDcuOTM1djM4LjU2NmMwIDIuOTc1LTMuMSA1Ljk2OC04LjEzIDMuNDUzbC05LjIxLTUuMzk2Yy0uMzI2LS4xNzctLjU3Ni0uNDktLjU3Ni0uODYzdi0zOS4wN2MwLS4zNy4yNDctLjc0Ny41NzYtLjkzNUw0NzAuNTQ3IDU3LjhhLjk5OC45OTggMCAwIDEgMS4wMDcgMGwzMy44MTcgMTkuNDk4Yy4zMjIuMTk0LjU3Ni41NTMuNTc2LjkzNnYzOS4wNjljMCAuMzczLS4xODguNzU1LS41MDQuOTM1bC0zMy44ODkgMTkuNDk4Yy0uMjkuMTczLS42OS4xNzMtMS4wMDcgMGwtOC43MDYtNS4xOGEuOTA1LjkwNSAwIDAgMC0uODYzIDBjLTIuNDAzIDEuMzYyLTIuODU1IDEuNTItNS4xMDkgMi4zMDItLjU1NS4xOTQtMS4zOTguNDk1LjI4OCAxLjQ0bDExLjM2OCA2LjY5YTYuOTk1IDYuOTk1IDAgMCAwIDMuNTI2LjkzNiA2Ljk0OSA2Ljk0OSAwIDAgMCAzLjUyNS0uOTM1bDMzLjg4OS0xOS40OTljMi4xOTMtMS4yNzUgMy41MjUtMy42NSAzLjUyNS02LjE4N3YtMzkuMDdjMC0yLjUzOC0xLjMzMi00LjkyLTMuNTI1LTYuMTg3bC0zMy44ODktMTkuNTdjLTEuMDYyLS42MDctMi4yOC0uODY0LTMuNTI1LS44NjR6Ii8+Cg08cGF0aCBkPSJNNDgwLjExNiA3OS41MjhjLTkuNjUgMC0xNS4zOTcgNC4xMDctMTUuMzk3IDEwLjkzNyAwIDcuNDA4IDUuNzA0IDkuNDQ0IDE0Ljk2NiAxMC4zNiAxMS4wOCAxLjA4NSAxMS45NDMgMi43MTIgMTEuOTQzIDQuODkzIDAgMy43ODMtMy4wMTYgNS4zOTYtMTAuMTQ0IDUuMzk2LTguOTU3IDAtMTAuOTI1LTIuMjM2LTExLjU4NC02LjY5MS0uMDc4LS40NzgtLjQ0Ny0uODY0LS45MzYtLjg2NGgtNC4zODljLS41NCAwLTEuMDA3LjQ2Ni0xLjAwNyAxLjAwOCAwIDUuNzAzIDMuMTAyIDEyLjQ0NyAxNy45MTYgMTIuNDQ3IDEwLjcyMyAwIDE2LjkwOC00LjIwOSAxNi45MDgtMTEuNTg0IDAtNy4zMS00Ljk5Ni05LjI3My0xNS4zOTgtMTAuNjQ4LTEwLjUxLTEuMzkxLTExLjUxMi0yLjA3Mi0xMS41MTItNC41MzMgMC0yLjAzMi44NS00Ljc1IDguNjM0LTQuNzUgNi45NTQgMCA5LjUyNCAxLjUgMTAuNTc3IDYuMTg5LjA5Mi40NC40OC43OTEuOTM1Ljc5MWg0LjM5Yy4yNyAwIC41MzItLjE2Ni43MTktLjM2LjE4NC0uMjA3LjMxNC0uNDQuMjg4LS43MTktLjY4LTguMDc0LTYuMDY0LTExLjg3Mi0xNi45MDktMTEuODcyeiIvPgoNPC9nPgoNPHBhdGggZD0iTTI3MS44MjEuMzgzYTIuMTgxIDIuMTgxIDAgMCAwLTEuMDguMjg3IDIuMTggMi4xOCAwIDAgMC0xLjA3OSAxLjg3MXY1NS4wNDJjMCAuNTQtLjI1MSAxLjAyNC0uNzE5IDEuMjk1YTEuNTAxIDEuNTAxIDAgMCAxLTEuNTExIDBsLTguOTk0LTUuMThhNC4zMSA0LjMxIDAgMCAwLTQuMzE3IDBsLTM1LjkwMyAyMC43MjFjLTEuMzQyLjc3NS0yLjE1OCAyLjI2NC0yLjE1OCAzLjgxNHY0MS40NDNjMCAxLjU0OC44MTcgMi45NjYgMi4xNTggMy43NDFsMzUuOTAzIDIwLjcyMmE0LjMgNC4zIDAgMCAwIDQuMzE3IDBsMzUuOTAzLTIwLjcyMmE0LjMwOCA0LjMwOCAwIDAgMCAyLjE1OS0zLjc0MVYxNi4zNTZhNC4zODYgNC4zODYgMCAwIDAtMi4yMy0zLjgxNEwyNzIuOS41OThjLS4zMzUtLjE4Ny0uNzA3LS4yMi0xLjA3OS0uMjE1ek00MC44NjEgNTIuMTE1Yy0uNjg0LjAyNy0xLjMyOC4xNDctMS45NDIuNTAzTDMuMDE1IDczLjM0YTQuMyA0LjMgMCAwIDAtMi4xNTggMy43NDFMLjkyOSAxMzIuN2MwIC43NzMuMzk5IDEuNDkyIDEuMDc5IDEuODdhMi4wOTYgMi4wOTYgMCAwIDAgMi4xNTkgMGwyMS4yOTctMTIuMjMxYzEuMzQ5LS44MDIgMi4yMy0yLjE5NiAyLjIzLTMuNzQyVjkyLjYyM2MwLTEuNTUuODE1LTIuOTcyIDIuMTU5LTMuNzQybDkuMDY1LTUuMjUyYTQuMjUxIDQuMjUxIDAgMCAxIDIuMTU5LS41NzZjLjc0IDAgMS41LjE4NSAyLjE1OC41NzZsOS4wNjYgNS4yNTJhNC4yOTYgNC4yOTYgMCAwIDEgMi4xNTkgMy43NDJ2MjUuOTczYzAgMS41NDYuODkgMi45NSAyLjIzIDMuNzQybDIxLjI5NyAxMi4yMzJhMi4wOTYgMi4wOTYgMCAwIDAgMi4xNTkgMCAyLjE2NCAyLjE2NCAwIDAgMCAxLjA4LTEuODcxbC4wNy01NS42MThhNC4yOCA0LjI4IDAgMCAwLTIuMTU4LTMuNzQxTDQzLjIzNSA1Mi42MThjLS42MDctLjM1Ni0xLjI1My0uNDc1LTEuOTQyLS41MDNoLS40MzJ6bTMyMi42MjQuNTAzYy0uNzUgMC0xLjQ4NS4xOS0yLjE1OC41NzZsLTM1LjkwMyAyMC43MjJhNC4zMDYgNC4zMDYgMCAwIDAtMi4xNTkgMy43NDFWMTE5LjFjMCAxLjU1OS44NzggMi45NzEgMi4yMyAzLjc0MmwzNS42MTYgMjAuMjljMS4zMTUuNzUgMi45MjEuODA3IDQuMjQ1LjA3bDIxLjU4NS0xMi4wMTVjLjY4NS0uMzggMS4xNDgtMS4wOSAxLjE1MS0xLjg3YTIuMTI2IDIuMTI2IDAgMCAwLTEuMDc5LTEuODcxbC0zNi4xMTktMjAuNzIyYy0uNjc2LS4zODYtMS4xNTEtMS4xNjctMS4xNTEtMS45NDN2LTEyLjk1YzAtLjc3NS40OC0xLjQ4NSAxLjE1MS0xLjg3MWwxMS4yMjQtNi40NzZhMi4xNTUgMi4xNTUgMCAwIDEgMi4xNTkgMEwzNzUuNSA4OS45NmEyLjE1MiAyLjE1MiAwIDAgMSAxLjA4IDEuODd2MTAuMjE3YTIuMTUgMi4xNSAwIDAgMCAxLjA3OSAxLjg3Yy42NzMuMzg5IDEuNDg3LjM5IDIuMTU4IDBMNDAxLjMzMSA5MS40YTQuMzI1IDQuMzI1IDAgMCAwIDIuMTU5LTMuNzQydi0xMGMwLTEuNTQ1LS44Mi0yLjk2Ni0yLjE1OS0zLjc0MmwtMzUuNjg3LTIwLjcyMmE0LjI3OSA0LjI3OSAwIDAgMC0yLjE1OS0uNTc1em0tMTA3LjM1IDMwLjkzOWMuMTg4IDAgLjQwOC4wNDYuNTc2LjE0M2wxMi4zMDQgNy4xMjNjLjMzNC4xOTMuNTc2LjU1LjU3Ni45MzV2MTQuMjQ2YzAgLjM4Ny0uMjQuNzQzLS41NzYuOTM2bC0xMi4zMDQgNy4xMjNhMS4wODggMS4wODggMCAwIDEtMS4wNzkgMGwtMTIuMzAzLTcuMTIzYy0uMzM1LS4xOTQtLjU3Ni0uNTQ5LS41NzYtLjkzNlY5MS43NThjMC0uMzg2LjI0Mi0uNzQuNTc2LS45MzVsMTIuMzAzLTcuMTIyYS45NDguOTQ4IDAgMCAxIC41MDQtLjE0M3YtLjAwMXoiIGZpbGw9IiM0MDQxMzciLz4KDTxwYXRoIGQ9Ik0xNDguNzE0IDUyLjQwMmMtLjc0OCAwLTEuNDg4LjE5LTIuMTU4LjU3NmwtMzUuOTAzIDIwLjY1Yy0xLjM0My43NzMtMi4xNTkgMi4yNjUtMi4xNTkgMy44MTN2NDEuNDQzYzAgMS41NS44MTcgMi45NjYgMi4xNTkgMy43NDJsMzUuOTAzIDIwLjcyMWE0LjI5NyA0LjI5NyAwIDAgMCA0LjMxNyAwbDM1LjkwMy0yMC43MjFhNC4zMDggNC4zMDggMCAwIDAgMi4xNTgtMy43NDJWNzcuNDQxYzAtMS41NS0uODE2LTMuMDQtMi4xNTgtMy44MTNsLTM1LjkwMy0yMC42NWE0LjI5NyA0LjI5NyAwIDAgMC0yLjE1OS0uNTc2ek0zNjMuNDEzIDg5LjM4NWMtLjE0MyAwLS4zMDIgMC0uNDMxLjA3MmwtNi45MDcgNC4wMjlhLjg0Ljg0IDAgMCAwLS40MzIuNzJ2Ny45MTRjMCAuMjk4LjE3Mi41NzEuNDMyLjcybDYuOTA3IDMuOTU3Yy4yNTkuMTUuNTM1LjE1Ljc5MSAwbDYuOTA3LTMuOTU4YS44NDYuODQ2IDAgMCAwIC40MzItLjcxOXYtNy45MTVhLjg0Ni44NDYgMCAwIDAtLjQzMi0uNzE5bC02LjkwNy00LjAzYy0uMTI4LS4wNzUtLjIxNi0uMDctLjM2LS4wN3oiIGZpbGw9IiM4M0NEMjkiLz4KDTwvc3ZnPg==\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/upsertUserId",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"upsertUserId"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchProfileData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n   \"user_id\" :\"123456\",\n   \"hash\" : \"fyguds3!fdsfsdfdfdsfdE#Vb3wedfs\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchProfileData",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchProfileData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProfile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test\",\n  \"prefectures\": [\n    \"1\",\n    \"2\",\n    \"3\"\n  ],\n  \"desiring_relations\": [\n    \"a\",\n    \"b\",\n    \"c\"\n  ],\n  \"birth_year\": \"1993\",\n  \"birth_month\": \"02\",\n  \"birth_day\": \"13\",\n  \"can_display_age\": true,\n  \"desiring_age_code\": \"1\",\n  \"profile_image_base64\": \"data:image/jpeg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIEdlbmVyYXRvcjogU1ZHIFJlcG8gTWl4ZXIgVG9vbHMgLS0+Cjxzdmcgd2lkdGg9IjgwMHB4IiBoZWlnaHQ9IjgwMHB4IiB2aWV3Qm94PSIwIC0xODMuNSA1MTIgNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1lZXQiPgoNPGcgZmlsbD0iIzgzQ0QyOSI+Cg08cGF0aCBkPSJNNDcxLjA1IDUxLjYxMWMtMS4yNDQgMC0yLjQ1NC4yNTctMy41MjUuODYzbC0zMy44ODggMTkuNTdjLTIuMTkzIDEuMjY0LTMuNTI2IDMuNjUtMy41MjYgNi4xODl2MzkuMDY5YzAgMi41MzcgMS4zMzMgNC45MiAzLjUyNiA2LjE4N2w4Ljg1IDUuMTA5YzQuMyAyLjExOSA1Ljg4NSAyLjA4NiA3Ljg0MiAyLjA4NiA2LjM2NiAwIDEwLjAwMS0zLjg2MyAxMC4wMDEtMTAuNTc2VjgxLjU0MmMwLS41NDUtLjQ3Mi0uOTM1LTEuMDA3LS45MzVoLTQuMjQ1Yy0uNTQ0IDAtMS4wMDcuMzktMS4wMDcuOTM1djM4LjU2NmMwIDIuOTc1LTMuMSA1Ljk2OC04LjEzIDMuNDUzbC05LjIxLTUuMzk2Yy0uMzI2LS4xNzctLjU3Ni0uNDktLjU3Ni0uODYzdi0zOS4wN2MwLS4zNy4yNDctLjc0Ny41NzYtLjkzNUw0NzAuNTQ3IDU3LjhhLjk5OC45OTggMCAwIDEgMS4wMDcgMGwzMy44MTcgMTkuNDk4Yy4zMjIuMTk0LjU3Ni41NTMuNTc2LjkzNnYzOS4wNjljMCAuMzczLS4xODguNzU1LS41MDQuOTM1bC0zMy44ODkgMTkuNDk4Yy0uMjkuMTczLS42OS4xNzMtMS4wMDcgMGwtOC43MDYtNS4xOGEuOTA1LjkwNSAwIDAgMC0uODYzIDBjLTIuNDAzIDEuMzYyLTIuODU1IDEuNTItNS4xMDkgMi4zMDItLjU1NS4xOTQtMS4zOTguNDk1LjI4OCAxLjQ0bDExLjM2OCA2LjY5YTYuOTk1IDYuOTk1IDAgMCAwIDMuNTI2LjkzNiA2Ljk0OSA2Ljk0OSAwIDAgMCAzLjUyNS0uOTM1bDMzLjg4OS0xOS40OTljMi4xOTMtMS4yNzUgMy41MjUtMy42NSAzLjUyNS02LjE4N3YtMzkuMDdjMC0yLjUzOC0xLjMzMi00LjkyLTMuNTI1LTYuMTg3bC0zMy44ODktMTkuNTdjLTEuMDYyLS42MDctMi4yOC0uODY0LTMuNTI1LS44NjR6Ii8+Cg08cGF0aCBkPSJNNDgwLjExNiA3OS41MjhjLTkuNjUgMC0xNS4zOTcgNC4xMDctMTUuMzk3IDEwLjkzNyAwIDcuNDA4IDUuNzA0IDkuNDQ0IDE0Ljk2NiAxMC4zNiAxMS4wOCAxLjA4NSAxMS45NDMgMi43MTIgMTEuOTQzIDQuODkzIDAgMy43ODMtMy4wMTYgNS4zOTYtMTAuMTQ0IDUuMzk2LTguOTU3IDAtMTAuOTI1LTIuMjM2LTExLjU4NC02LjY5MS0uMDc4LS40NzgtLjQ0Ny0uODY0LS45MzYtLjg2NGgtNC4zODljLS41NCAwLTEuMDA3LjQ2Ni0xLjAwNyAxLjAwOCAwIDUuNzAzIDMuMTAyIDEyLjQ0NyAxNy45MTYgMTIuNDQ3IDEwLjcyMyAwIDE2LjkwOC00LjIwOSAxNi45MDgtMTEuNTg0IDAtNy4zMS00Ljk5Ni05LjI3My0xNS4zOTgtMTAuNjQ4LTEwLjUxLTEuMzkxLTExLjUxMi0yLjA3Mi0xMS41MTItNC41MzMgMC0yLjAzMi44NS00Ljc1IDguNjM0LTQuNzUgNi45NTQgMCA5LjUyNCAxLjUgMTAuNTc3IDYuMTg5LjA5Mi40NC40OC43OTEuOTM1Ljc5MWg0LjM5Yy4yNyAwIC41MzItLjE2Ni43MTktLjM2LjE4NC0uMjA3LjMxNC0uNDQuMjg4LS43MTktLjY4LTguMDc0LTYuMDY0LTExLjg3Mi0xNi45MDktMTEuODcyeiIvPgoNPC9nPgoNPHBhdGggZD0iTTI3MS44MjEuMzgzYTIuMTgxIDIuMTgxIDAgMCAwLTEuMDguMjg3IDIuMTggMi4xOCAwIDAgMC0xLjA3OSAxLjg3MXY1NS4wNDJjMCAuNTQtLjI1MSAxLjAyNC0uNzE5IDEuMjk1YTEuNTAxIDEuNTAxIDAgMCAxLTEuNTExIDBsLTguOTk0LTUuMThhNC4zMSA0LjMxIDAgMCAwLTQuMzE3IDBsLTM1LjkwMyAyMC43MjFjLTEuMzQyLjc3NS0yLjE1OCAyLjI2NC0yLjE1OCAzLjgxNHY0MS40NDNjMCAxLjU0OC44MTcgMi45NjYgMi4xNTggMy43NDFsMzUuOTAzIDIwLjcyMmE0LjMgNC4zIDAgMCAwIDQuMzE3IDBsMzUuOTAzLTIwLjcyMmE0LjMwOCA0LjMwOCAwIDAgMCAyLjE1OS0zLjc0MVYxNi4zNTZhNC4zODYgNC4zODYgMCAwIDAtMi4yMy0zLjgxNEwyNzIuOS41OThjLS4zMzUtLjE4Ny0uNzA3LS4yMi0xLjA3OS0uMjE1ek00MC44NjEgNTIuMTE1Yy0uNjg0LjAyNy0xLjMyOC4xNDctMS45NDIuNTAzTDMuMDE1IDczLjM0YTQuMyA0LjMgMCAwIDAtMi4xNTggMy43NDFMLjkyOSAxMzIuN2MwIC43NzMuMzk5IDEuNDkyIDEuMDc5IDEuODdhMi4wOTYgMi4wOTYgMCAwIDAgMi4xNTkgMGwyMS4yOTctMTIuMjMxYzEuMzQ5LS44MDIgMi4yMy0yLjE5NiAyLjIzLTMuNzQyVjkyLjYyM2MwLTEuNTUuODE1LTIuOTcyIDIuMTU5LTMuNzQybDkuMDY1LTUuMjUyYTQuMjUxIDQuMjUxIDAgMCAxIDIuMTU5LS41NzZjLjc0IDAgMS41LjE4NSAyLjE1OC41NzZsOS4wNjYgNS4yNTJhNC4yOTYgNC4yOTYgMCAwIDEgMi4xNTkgMy43NDJ2MjUuOTczYzAgMS41NDYuODkgMi45NSAyLjIzIDMuNzQybDIxLjI5NyAxMi4yMzJhMi4wOTYgMi4wOTYgMCAwIDAgMi4xNTkgMCAyLjE2NCAyLjE2NCAwIDAgMCAxLjA4LTEuODcxbC4wNy01NS42MThhNC4yOCA0LjI4IDAgMCAwLTIuMTU4LTMuNzQxTDQzLjIzNSA1Mi42MThjLS42MDctLjM1Ni0xLjI1My0uNDc1LTEuOTQyLS41MDNoLS40MzJ6bTMyMi42MjQuNTAzYy0uNzUgMC0xLjQ4NS4xOS0yLjE1OC41NzZsLTM1LjkwMyAyMC43MjJhNC4zMDYgNC4zMDYgMCAwIDAtMi4xNTkgMy43NDFWMTE5LjFjMCAxLjU1OS44NzggMi45NzEgMi4yMyAzLjc0MmwzNS42MTYgMjAuMjljMS4zMTUuNzUgMi45MjEuODA3IDQuMjQ1LjA3bDIxLjU4NS0xMi4wMTVjLjY4NS0uMzggMS4xNDgtMS4wOSAxLjE1MS0xLjg3YTIuMTI2IDIuMTI2IDAgMCAwLTEuMDc5LTEuODcxbC0zNi4xMTktMjAuNzIyYy0uNjc2LS4zODYtMS4xNTEtMS4xNjctMS4xNTEtMS45NDN2LTEyLjk1YzAtLjc3NS40OC0xLjQ4NSAxLjE1MS0xLjg3MWwxMS4yMjQtNi40NzZhMi4xNTUgMi4xNTUgMCAwIDEgMi4xNTkgMEwzNzUuNSA4OS45NmEyLjE1MiAyLjE1MiAwIDAgMSAxLjA4IDEuODd2MTAuMjE3YTIuMTUgMi4xNSAwIDAgMCAxLjA3OSAxLjg3Yy42NzMuMzg5IDEuNDg3LjM5IDIuMTU4IDBMNDAxLjMzMSA5MS40YTQuMzI1IDQuMzI1IDAgMCAwIDIuMTU5LTMuNzQydi0xMGMwLTEuNTQ1LS44Mi0yLjk2Ni0yLjE1OS0zLjc0MmwtMzUuNjg3LTIwLjcyMmE0LjI3OSA0LjI3OSAwIDAgMC0yLjE1OS0uNTc1em0tMTA3LjM1IDMwLjkzOWMuMTg4IDAgLjQwOC4wNDYuNTc2LjE0M2wxMi4zMDQgNy4xMjNjLjMzNC4xOTMuNTc2LjU1LjU3Ni45MzV2MTQuMjQ2YzAgLjM4Ny0uMjQuNzQzLS41NzYuOTM2bC0xMi4zMDQgNy4xMjNhMS4wODggMS4wODggMCAwIDEtMS4wNzkgMGwtMTIuMzAzLTcuMTIzYy0uMzM1LS4xOTQtLjU3Ni0uNTQ5LS41NzYtLjkzNlY5MS43NThjMC0uMzg2LjI0Mi0uNzQuNTc2LS45MzVsMTIuMzAzLTcuMTIyYS45NDguOTQ4IDAgMCAxIC41MDQtLjE0M3YtLjAwMXoiIGZpbGw9IiM0MDQxMzciLz4KDTxwYXRoIGQ9Ik0xNDguNzE0IDUyLjQwMmMtLjc0OCAwLTEuNDg4LjE5LTIuMTU4LjU3NmwtMzUuOTAzIDIwLjY1Yy0xLjM0My43NzMtMi4xNTkgMi4yNjUtMi4xNTkgMy44MTN2NDEuNDQzYzAgMS41NS44MTcgMi45NjYgMi4xNTkgMy43NDJsMzUuOTAzIDIwLjcyMWE0LjI5NyA0LjI5NyAwIDAgMCA0LjMxNyAwbDM1LjkwMy0yMC43MjFhNC4zMDggNC4zMDggMCAwIDAgMi4xNTgtMy43NDJWNzcuNDQxYzAtMS41NS0uODE2LTMuMDQtMi4xNTgtMy44MTNsLTM1LjkwMy0yMC42NWE0LjI5NyA0LjI5NyAwIDAgMC0yLjE1OS0uNTc2ek0zNjMuNDEzIDg5LjM4NWMtLjE0MyAwLS4zMDIgMC0uNDMxLjA3MmwtNi45MDcgNC4wMjlhLjg0Ljg0IDAgMCAwLS40MzIuNzJ2Ny45MTRjMCAuMjk4LjE3Mi41NzEuNDMyLjcybDYuOTA3IDMuOTU3Yy4yNTkuMTUuNTM1LjE1Ljc5MSAwbDYuOTA3LTMuOTU4YS44NDYuODQ2IDAgMCAwIC40MzItLjcxOXYtNy45MTVhLjg0Ni44NDYgMCAwIDAtLjQzMi0uNzE5bC02LjkwNy00LjAzYy0uMTI4LS4wNzUtLjIxNi0uMDctLjM2LS4wN3oiIGZpbGw9IiM4M0NEMjkiLz4KDTwvc3ZnPg==\",\n  \"profile_image_delete_flag\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/updateProfile",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"updateProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateDetailProfile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"gallery_image_s3_keys\": [\n    \"1\",\n    \"2\",\n    \"3\"\n  ],\n  \"gallery_image_base64s\": [\n    \"1\",\n    \"2\",\n    \"3\"\n  ],\n  \"pr\": \"pr\",\n  \"height\": \"10\",\n  \"style_code\": \"7\",\n  \"job_code\": \"6\",\n  \"blood_type_code\": \"5\",\n  \"drink_code\": \"2\",\n  \"cigarette_code\": \"3\",\n  \"hobbies\": [\n    \"1\",\n    \"2\",\n    \"3\"\n  ],\n  \"relationship_with_partner_code\": \"2\",\n  \"closeness_with_partner_code\": \"1\",\n  \"living_code\": \"pr\",\n  \"child_code\": \"pr\",\n  \"available_times\": [\n    \"10\",\n    \"11\",\n    \"12\"\n  ],\n  \"contact_exchange_code\": \"2\",\n  \"time_to_meet_code\": \"3\",\n  \"annual_income_code\": \"1\",\n  \"first_meeting_payment_code\": \"2\",\n  \"meeting_frequency_code\": \"2\",\n  \"relationship_expectation_code\": \"2\",\n  \"first_meeting_plans\": [\n    \"10\",\n    \"11\",\n    \"12\"\n  ],\n  \"flutter_moments\": [\n    \"10\",\n    \"11\",\n    \"12\"\n  ],\n  \"spending_habits\": [\n    \"10\",\n    \"11\",\n    \"12\"\n  ],\n  \"fetishes\": [\n    \"10\",\n    \"11\",\n    \"12\"\n  ],\n  \"partner_interaction_frequency_code\": \"2\",\n  \"period_of_inactivity_code\": \"2\",\n  \"self_care_frequency_code\": \"2\",\n  \"extramarital_experiences_code\": \"2\",\n  \"recent_experience_code\": \"2\",\n  \"ideal_interaction_frequency_code\": \"2\",\n  \"life_wellness_filled_count\": 5,\n  \"sexual_wellness_filled_count\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/updateDetailProfile",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"updateDetailProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchNotViewedData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n   \"user_id\": \"123456\",\n   \"hash\": \"fyguds3!fdsfsdfdfdsfdE#Vb3wedf\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchNotViewedData",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchNotViewedData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateNotViewedData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"key\": \"not_viewed_liked_count\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/updateNotViewedData",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"updateNotViewedData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchAlbum",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n   \"user_id\": \"123456\",\n   \"hash\": \"fyguds3!fdsfsdfdfdsfdE#Vb3wedfs\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchAlbum",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchAlbum"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAlbum",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n   \"user_id\": \"123456\",\n   \"hash\": \"fyguds3!fdsfsdfdfdsfdE#Vb3wedfs...\",\n   \"album_image_s3_keys\": [],\n   \"album_image_base64s\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/updateAlbum",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"updateAlbum"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchFilteringNumbers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n   \"user_id\": \"123456\",\n   \"hash\": \"fyguds3!fdsfsdfdfdsfdE#Vb3wedfs...\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchFilteringNumbers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchFilteringNumbers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createFilteringNumber",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n   \"user_id\": \"123456\",\n   \"hash\": \"fyguds3!fdsfsdfdfdsfdE#Vb3wedfs...\",\n   \"number\": \"09012345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/createFilteringNumber",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"createFilteringNumber"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteFilteringNumber",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"number\": \"0398025597\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/deleteFilteringNumber",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"deleteFilteringNumber"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePassword",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"password\": \"free!123\",\n  \"new_password\": \"free!456\",\n  \"confirm_password\": \"free!456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/updatePassword",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchReceivedFootprints",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 10,\n  \"start_date\": \"2024-10-10 12:00:01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchReceivedFootprints",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchReceivedFootprints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchMyFootprint",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 10,\n  \"start_date\": \"2024-10-10 12:00:01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchMyFootprint",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchMyFootprint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteMyFootprint",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"footprint_id\": \"10\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/deleteMyFootprint",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"deleteMyFootprint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchBoostUsers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 10,\n  \"start_date\": \"2024-10-10 12:00:01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchBoostUsers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchBoostUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"target_user_id\": \"aae7e0c6-07be-4e53-91cc-c5e7daa8aa81\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchUser",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchFirstUserWellnessProfile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"target_user_id\": \"aae7e0c6-07be-4e53-91cc-c5e7daa8aa81\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchFirstUserWellnessProfile",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchFirstUserWellnessProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upsertUserLike",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"to_user_id\": \"aae7e0c6-07be-4e53-91cc-c5e7daa8aa81\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/upsertUserLike",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"upsertUserLike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUserLike",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"to_user_id\": \"aae7e0c6-07be-4e53-91cc-c5e7daa8aa81\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/deleteUserLike",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"deleteUserLike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchLikedUsers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 10,\n  \"start_date\": \"2024-10-10 12:00:01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchLikedUsers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchLikedUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchMyLikesUsers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 10,\n  \"start_date\": \"2024-10-10 12:00:01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchMyLikesUsers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchMyLikesUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchMatchedUsers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 10,\n  \"start_date\": \"2024-10-10 12:00:01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchMatchedUsers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchMatchedUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchMatchedUserAlbums",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"target_user_id\": \"cc86bc67-7135-429e-912b-39189300bb29\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchMatchedUserAlbums",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchMatchedUserAlbums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchSearchedUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"sort_key\": \"string\",\n  \"sort\": \"string\",\n  \"is_valid\": true,\n  \"gender_code\": \"string\",\n  \"user_id\": \"string\",\n  \"mail\": \"string\",\n  \"tel\": \"string\",\n  \"name_fuzzy_word\": \"string\",\n  \"pr_fuzzy_word\": \"string\",\n  \"upper_birth_date\": \"string\",\n  \"lower_birth_date\": \"string\",\n  \"code\": \"string\",\n  \"prefecture_codes\": [\n    \"string\"\n  ],\n  \"can_affiliate\": true,\n  \"is_id_verified\": true,\n  \"is_ghost\": true,\n  \"is_deleted\": true,\n  \"is_banned\": true,\n  \"is_normal_license_subscribed\": true,\n  \"has_normal_license_feature\": true,\n  \"is_premium_license_subscribed\": true,\n  \"has_premium_license_feature\": true,\n  \"is_stealth_license_subscribed\": true,\n  \"has_stealth_license_feature\": true,\n  \"has_boost_license_feature\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchSearchedUser",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchSearchedUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUserBlock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"target_user_id\": \"cc86bc67-7135-429e-912b-39189300bb29\",\n  \"block_type_code\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/createUserBlock",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"createUserBlock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUserReport",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"target_user_id\": \"cc86bc67-7135-429e-912b-39189300bb29\",\n  \"report_image_base64s\": [],\n  \"report_type_code\": \"1\",\n  \"report_scene_code\": \"1\",\n  \"memo\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/createUserReport",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"createUserReport"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchNotifications",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 10,\n  \"start_date\": \"2024-10-10 12:00:01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchNotifications",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchNotifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchPointTransactions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 10,\n  \"start_date\": \"2024-10-10 12:00:01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/fetchPointTransactions",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fetchPointTransactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchMailNotificationSettings",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}users/fetchMailNotificationSettings",
+					"host": [
+						"{{url}}users"
+					],
+					"path": [
+						"fetchMailNotificationSettings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateMailNotificationSettings",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"can_notify_news\": true,\n  \"can_notify_room\": true,\n  \"can_notify_first_message\": true,\n  \"can_notify_liked\": true,\n  \"can_notify_matched\": true,\n  \"can_notify_affiliate_conversion\": true,\n  \"can_notify_afiiliate_paid\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/updateMailNotificationSettings",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"updateMailNotificationSettings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

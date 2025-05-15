@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "977c9a74-7d7f-4ef4-96b0-c9b36499c862",
+		"name": "auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18416975"
+	},
+	"item": [
+		{
+			"name": "upsertRegistration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mail\": \"user@freec.com\",\n  \"password\": \"free!123\",\n  \"gender_code\": \"1\",\n  \"is_terms_consented\": true,\n  \"utm\": \"referral\",\n  \"media\": \"\",\n  \"adid\": \"\",\n  \"lp\": \"\",\n  \"referral_code\": \"cdbsui436\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/upsertRegistration",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"upsertRegistration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"code\": \"XgHCXMDVvt\",\n  \"hash\": \"JsstesifMENMCzouAqRDFiaWHFvssOnjwXBaQCwSxFlgvvwdIc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/createUser",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/ecmascript",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mail\": \"user@freec.com\",\n  \"password\": \"free!123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createAdminUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mail\": \"string\",\n  \"password\": \"string\",\n  \"secret_key\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/createAdminUser",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"createAdminUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adminLogin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mail\": \"string\",\n  \"password\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/adminLogin",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"adminLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "requestMailVerificationCodeForPasswordForget",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mail\": \"user@freec.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/requestMailVerificationCodeForPasswordForget",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"requestMailVerificationCodeForPasswordForget"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePasswordForForget",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mail\": \"user@freec.com\",\n  \"code\": \"user@freec.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/updatePasswordForForget",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"updatePasswordForForget"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

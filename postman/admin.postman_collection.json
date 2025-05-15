@@ -1,0 +1,1751 @@
+{
+	"info": {
+		"_postman_id": "243f96f3-9c30-467f-93b3-56967e2b6de9",
+		"name": "admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18416975"
+	},
+	"item": [
+		{
+			"name": "fetchAuthUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application-json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"admin_user_id\": \"eed284ab-eae4-49a9-a6a5-6fe1cc85f66a\",\n  \"hash\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchAuthUser",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchAuthUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createAdminUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"mail\": \"nguyettruong+2@freec.asia\",\n    \"password\": \"abcd1234\",\n    \"secret_key\": \"secret_key\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/createAdminUser",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"createAdminUser"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "fetchRegistration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"registration_id\": \"string\",\n  \"gender_code\": \"string\",\n  \"is_created\": true,\n  \"created_user_id\": \"string\",\n  \"created_mail\": \"string\",\n  \"is_deleted\": true,\n  \"utm\": \"string\",\n  \"media\": \"string\",\n  \"adid\": \"string\",\n  \"lp\": \"string\",\n  \"referral_code\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchRegistration",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchRegistration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteRegistration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"registration_id\": \"18060e90-7478-4f09-9eed-9253c89683f3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/deleteRegistration",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"deleteRegistration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchUserCount",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"is_valid\": true,\n  \"gender_code\": \"string\",\n  \"user_id\": \"string\",\n  \"mail\": \"string\",\n  \"tel\": \"string\",\n  \"name_fuzzy_word\": \"string\",\n  \"pr_fuzzy_word\": \"string\",\n  \"upper_birth_date\": \"string\",\n  \"lower_birth_date\": \"string\",\n  \"code\": \"string\",\n  \"prefecture_codes\": [\n    \"string\"\n  ],\n  \"can_affiliate\": true,\n  \"is_id_verified\": true,\n  \"is_ghost\": true,\n  \"is_deleted\": true,\n  \"is_banned\": true,\n  \"is_normal_license_subscribed\": true,\n  \"has_normal_license_feature\": true,\n  \"is_premium_license_subscribed\": true,\n  \"has_premium_license_feature\": true,\n  \"is_stealth_license_subscribed\": true,\n  \"has_stealth_license_feature\": true,\n  \"has_boost_license_feature\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchUserCount",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchUserCount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchSearchedUsers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"is_valid\": true,\n  \"gender_code\": \"string\",\n  \"user_id\": \"string\",\n  \"mail\": \"string\",\n  \"tel\": \"string\",\n  \"name_fuzzy_word\": \"string\",\n  \"pr_fuzzy_word\": \"string\",\n  \"upper_birth_date\": \"string\",\n  \"lower_birth_date\": \"string\",\n  \"code\": \"string\",\n  \"prefecture_codes\": [\n    \"string\"\n  ],\n  \"can_affiliate\": true,\n  \"is_id_verified\": true,\n  \"is_ghost\": true,\n  \"is_deleted\": true,\n  \"is_banned\": true,\n  \"is_normal_license_subscribed\": true,\n  \"has_normal_license_feature\": true,\n  \"is_premium_license_subscribed\": true,\n  \"has_premium_license_feature\": true,\n  \"is_stealth_license_subscribed\": true,\n  \"has_stealth_license_feature\": true,\n  \"has_boost_license_feature\": true,\n  \"sort_key\": \"string\",\n  \"sort\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}fetchSearchedUsers",
+					"host": [
+						"{{url}}fetchSearchedUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"eed284ab-eae4-49a9-a6a5-6fe1cc85f66a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchUser",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchUserNotifications",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Autthorization",
+						"value": "Bearer {{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"user_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchUserNotifications",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchUserNotifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchUserPointTransactions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"user_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchUserPointTransactions",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchUserPointTransactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchReports",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"from_user_id\": \"string\",\n  \"to_user_id\": \"string\",\n  \"report_type_code\": \"string\",\n  \"report_scene_code\": \"string\",\n  \"memo\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchReports",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchReports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchUserLogs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"user_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchUserLogs",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchUserLogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchMonitorLogs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchMonitorLogs",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchMonitorLogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchRooms",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"male_user_id\": \"string\",\n  \"female_user_id\": \"string\",\n  \"min_total_message_count\": 0,\n  \"max_total_message_count\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchRooms",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchRooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchRoomMessages",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"sort\": \"string\",\n  \"male_user_id\": \"string\",\n  \"female_user_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchRoomMessages",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchRoomMessages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchFootprints",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"from_user_id\": \"string\",\n  \"to_user_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchFootprints",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchFootprints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchPurchases",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"end_date\": \"string\",\n  \"user_id\": \"string\",\n  \"plan_type\": \"string\",\n  \"plan_duration\": \"string\",\n  \"plan_name\": \"string\",\n  \"tel\": \"string\",\n  \"payment_type\": \"string\",\n  \"referral_user_id\": \"string\",\n  \"grand_referral_user_id\": \"string\",\n  \"great_grand_referral_user_id\": \"string\",\n  \"is_affiliated_sale\": true,\n  \"utm\": \"string\",\n  \"media\": \"string\",\n  \"adid\": \"string\",\n  \"lp\": \"string\",\n  \"is_affiliate_sale\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchPurchases",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchPurchases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchIds",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"is_verified\": true,\n  \"user_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchIds",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchIds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateIdStatus",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id_id\": \"string\",\n  \"is_verified\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateIdStatus",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateIdStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteIdVerificationStatus",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{url}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/deleteIdVerificationStatus",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"deleteIdVerificationStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateOver18Status",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{url}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"is_over18_verified\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateOver18Status",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateOver18Status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTelVerificationStatus",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{url}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/deleteTelVerificationStatus",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"deleteTelVerificationStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserViolatedProfile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"is_name_violated\": true,\n  \"name_alternative_text\": \"string\",\n  \"is_pr_violated\": true,\n  \"pr_alternative_text\": \"string\",\n  \"is_profile_image_violated\": true,\n  \"is_gallery_image_violated\": true,\n  \"gallery_image_violated_index\": 0,\n  \"is_album_image_violated\": true,\n  \"album_image_violated_index\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateUserViolatedProfile",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateUserViolatedProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserBanStatus",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"is_banned\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateUserBanStatus",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateUserBanStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserAffiliateBanStatus",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{url}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"is_affiliate_banned\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateUserAffiliateBanStatus",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateUserAffiliateBanStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserSuspendedEndDate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"suspended_end_date\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateUserSuspendedEndDate",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateUserSuspendedEndDate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserLicenseDate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"plan\": \"string\",\n  \"validity_date\": \"string\",\n  \"admin_user_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateUserLicenseDate",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateUserLicenseDate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserPoint",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"additional_point\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateUserPoint",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateUserPoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserBirthDate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"birth_year\": \"string\",\n  \"birth_month\": \"string\",\n  \"birth_day\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateUserBirthDate",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateUserBirthDate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserMailBounced",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"is_mail_bounced\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateUserMailBounced",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateUserMailBounced"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchAffiliateConversions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"end_date\": \"string\",\n  \"user_id\": \"string\",\n  \"conversion_type\": \"string\",\n  \"commission_type\": \"string\",\n  \"reward_type\": \"string\",\n  \"purchase_id\": \"string\",\n  \"target_user_id\": \"string\",\n  \"target_user_tel\": \"string\",\n  \"tier\": \"string\",\n  \"applied_commission_rate\": 0,\n  \"applied_commission_rate_reason\": \"string\",\n  \"is_approved\": true,\n  \"is_deleted\": true,\n  \"approve_status_updated_date\": \"string\",\n  \"payment_status\": \"string\",\n  \"payment_request_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchAffiliateConversions",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchAffiliateConversions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAffiliateConversionApprovedStatus",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"affiliate_conversion_id\": \"string\",\n  \"is_approved\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateAffiliateConversionApprovedStatus",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateAffiliateConversionApprovedStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchAffiliatePayoutRequests",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"user_id\": \"string\",\n  \"is_paid\": true,\n  \"payout_type\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchAffiliatePayoutRequests",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchAffiliatePayoutRequests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createAffiliatePayout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"affiliate_payout_request_id\": \"string\",\n  \"has_invoice_registration_number\": true,\n  \"invoice_registration_number\": \"string\",\n  \"is_tax_paid\": true,\n  \"paid_amount\": 0,\n  \"paid_tax_amount\": 0,\n  \"payout_type\": \"string\",\n  \"paid_bank\": \"string\",\n  \"user_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/createAffiliatePayout",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"createAffiliatePayout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchAffiliatePayouts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"affiliate_payout_id\": \"string\",\n  \"affiliate_payout_request_id\": \"string\",\n  \"user_id\": \"string\",\n  \"has_invoice_registration_number\": true,\n  \"invoice_registration_number\": \"string\",\n  \"payout_type\": \"string\",\n  \"is_tax_paid\": true,\n  \"is_paid\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchAffiliatePayouts",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchAffiliatePayouts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAffiliateConversionConditions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"admin_user_id\": \"string\",\n  \"user_id\": \"string\",\n  \"code\": \"string\",\n  \"first_purchase_commission_rate\": 0,\n  \"standard_commission_rate\": 0,\n  \"can_get_tier2_commission\": true,\n  \"tier2_commission_rate\": 0,\n  \"can_get_tier3_commission\": true,\n  \"tier3_commission_rate\": 0,\n  \"can_get_male_id_reward\": true,\n  \"can_get_female_id_reward\": true,\n  \"male_id_reward_amount\": 0,\n  \"female_id_reward_amount\": 0,\n  \"can_get_male_tel_reward\": true,\n  \"can_get_female_tel_reward\": true,\n  \"male_tel_reward_amount\": 0,\n  \"female_tel_reward_amount\": 0,\n  \"male_reward_amount\": 0,\n  \"female_reward_amount\": 0,\n  \"can_get_first_purchase_guaranteed_reward\": true,\n  \"first_purchase_guaranteed_reward_amount\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateAffiliateConversionConditions",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateAffiliateConversionConditions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserInvoice",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"has_invoice_registration_number\": true,\n  \"invoice_registration_number\": \"string\",\n  \"code\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateUserInvoice",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateUserInvoice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserBank",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"code\": \"string\",\n  \"bank_code\": \"string\",\n  \"bank_name\": \"string\",\n  \"bank_brunch_code\": \"string\",\n  \"bank_brunch_name\": \"string\",\n  \"bank_account_type\": \"string\",\n  \"bank_account_number\": \"string\",\n  \"bank_account_name\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/updateUserBank",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"updateUserBank"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUserNotification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"notification_type\": \"string\",\n  \"notification_title\": \"string\",\n  \"notification_message\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/createUserNotification",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"createUserNotification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchMutualBlockStatus",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"target_user_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchMutualBlockStatus",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchMutualBlockStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUserBlock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"string\",\n  \"target_user_id\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/createUserBlock",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"createUserBlock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchBannedMails",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchBannedMails",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchBannedMails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createBannedMail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mail\": \"string\",\n  \"memo\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/createBannedMail",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"createBannedMail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchBannedNumbers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/admin/fetchBannedNumbers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchBannedNumbers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createBannedNumber",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"number\": \"string\",\n  \"memo\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/createBannedNumber",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"createBannedNumber"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchDeletedUserSurveys",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"count\": 0,\n  \"start_date\": \"string\",\n  \"user_id\": \"string\",\n  \"gender_code\": \"string\",\n  \"tel\": \"string\",\n  \"mail\": \"string\",\n  \"app_recommend_type_code\": \"string\",\n  \"app_review_score\": \"string\",\n  \"app_usage_states_code\": \"string\",\n  \"experience_type_code\": \"string\",\n  \"min_leaved_footprint_count\": 0,\n  \"min_active_room_count\": 0,\n  \"min_liked_users_count\": 0,\n  \"min_matched_users_count\": 0,\n  \"min_charge_amount\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/fetchDeletedUserSurveys",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"fetchDeletedUserSurveys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGhostUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer{{acccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"string\",\n  \"profile_image_base64\": \"string\",\n  \"prefectures\": [\n    \"string\"\n  ],\n  \"gender_code\": \"string\",\n  \"birth_year\": \"string\",\n  \"birth_month\": \"string\",\n  \"birth_day\": \"string\",\n  \"is_id_verified\": true,\n  \"id_uploaded_date\": \"string\",\n  \"gallery_image_base64s\": [\n    \"string\"\n  ],\n  \"can_display_age\": true,\n  \"desiring_relations\": [\n    \"string\"\n  ],\n  \"desiring_age_code\": \"string\",\n  \"pr\": \"string\",\n  \"height\": \"string\",\n  \"style_code\": \"string\",\n  \"job_code\": \"string\",\n  \"blood_type_code\": \"string\",\n  \"drink_code\": \"string\",\n  \"cigarette_code\": \"string\",\n  \"hobbies\": [\n    \"string\"\n  ],\n  \"living_code\": \"string\",\n  \"child_code\": \"string\",\n  \"closeness_with_partner_code\": \"string\",\n  \"relationship_with_partner_code\": \"string\",\n  \"available_times\": [\n    \"string\"\n  ],\n  \"time_to_meet_code\": \"string\",\n  \"contact_exchange_code\": \"string\",\n  \"annual_income_code\": \"string\",\n  \"spending_habits\": [\n    \"string\"\n  ],\n  \"first_meeting_payment_code\": \"string\",\n  \"first_meeting_plans\": [\n    \"string\"\n  ],\n  \"meeting_frequency_code\": \"string\",\n  \"relationship_expectation_code\": \"string\",\n  \"flutter_moments\": [\n    \"string\"\n  ],\n  \"fetishes\": [\n    \"string\"\n  ],\n  \"partner_interaction_frequency_code\": \"string\",\n  \"period_of_inactivity_code\": \"string\",\n  \"self_care_frequency_code\": \"string\",\n  \"extramarital_experiences_code\": \"string\",\n  \"recent_experience_code\": \"string\",\n  \"ideal_interaction_frequency_code\": \"string\",\n  \"life_wellness_filled_count\": 0,\n  \"sexual_wellness_filled_count\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/createGhostUser",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"createGhostUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
