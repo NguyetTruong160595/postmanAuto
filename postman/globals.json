@@ -1,0 +1,19 @@
+{
+	"id": "3ddedd6d-ee65-4193-8cb1-9f5a0746d94d",
+	"values": [
+		{
+			"key": "url",
+			"value": "https://sangbui.com/e-api-dashboard-document/",
+			"enabled": true
+		},
+		{
+			"key": "acccessToken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZWVkMjg0YWItZWFlNC00OWE5LWE2YTUtNmZlMWNjODVmNjZhIiwicm9sZXMiOlsiYWRtaW4iXSwiaWF0IjoxNzM2MzI2MDQ2LCJleHAiOjE3MzY5MzA4NDZ9.y2Q5447A88OMtWd2Og1baAfDf5Bp_AJh2FGI9YcmxGg",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2025-05-15T08:05:48.969Z",
+	"_postman_exported_using": "Postman/11.41.4"
+}

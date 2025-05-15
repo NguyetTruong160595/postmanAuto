@@ -24,6 +24,7 @@ jobs:
             name=$(basename "$file" .json)
             echo "Running collection: $name"
             newman run "$file" \
+              --globals postman/globals.json \
               --reporters cli,htmlextra \
               --reporter-htmlextra-export "newman-report/${name}-report.html"
           done
